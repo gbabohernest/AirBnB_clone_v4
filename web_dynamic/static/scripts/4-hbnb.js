@@ -44,9 +44,10 @@ $(document).ready(function () {
       type: 'POST',
       contentType: application / json,
       dataType: 'JSON',
-      data: '{}',
+      data: JSON.stringify({ amenities: Object.keys(selectedAmenities) }),
       success: function (places) {
         // fetches each place info and appends the info in the places section
+	$('section.places').empty(); // clear existing places before appending new ones
         for (const place of places) {
           const place_article = `<article>
           <div class="title_box">
@@ -73,7 +74,7 @@ $(document).ready(function () {
             ${place.description}
           </div>
         </article>`;
-          $('SECTION.places').append(place_article);
+          $('section.places').append(place_article);
         }
       },
     });
