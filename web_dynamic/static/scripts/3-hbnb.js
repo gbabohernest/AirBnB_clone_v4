@@ -42,7 +42,7 @@ $(document).ready(function () {
       contentType: application/json,
       dataType: 'JSON',
       data:'{}',
-      sucess: function(places) {
+      success: function(places) {
         // fetches each place info and appends the info in the places section
         for (const place of places) {
           const place_article = `<article>
